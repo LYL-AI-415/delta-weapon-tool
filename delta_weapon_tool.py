@@ -5,26 +5,25 @@ import random
 
 # ==================== 完整枪械数据库 ====================
 WEAPON_DB = {
-    "M4A1": {"type": "突击步枪", "适合": "均衡型，中距离", "后坐力等级": 3, "射速等级": 3, "伤害等级": 2},
-    "MP5":  {"type": "冲锋枪",   "适合": "近战高速，高机动", "后坐力等级": 1, "射速等级": 5, "伤害等级": 1},
-    "AK-47":{"type": "突击步枪", "适合": "高伤害，后坐力大", "后坐力等级": 5, "射速等级": 2, "伤害等级": 4},
-    "AWM":  {"type": "狙击步枪", "适合": "一击致命，极低容错", "后坐力等级": 5, "射速等级": 1, "伤害等级": 5},
-    "M700": {"type": "射手步枪", "适合": "灵活狙击，节奏快", "后坐力等级": 4, "射速等级": 2, "伤害等级": 4},
-    "SR3M": {"type": "冲锋枪",   "适合": "撕咬近战，双修", "后坐力等级": 2, "射速等级": 4, "伤害等级": 2},
-    "KC17": {"type": "射手步枪", "适合": "远距离压制，长短管可选", "后坐力等级": 3, "射速等级": 2, "伤害等级": 4},
-    "MK47（余烬）": {"type": "突击步枪", "适合": "均衡稳定，影袭/主宰", "后坐力等级": 3, "射速等级": 3, "伤害等级": 3},
-    "RM277": {"type": "狙击步枪", "适合": "重型一体，高伤害", "后坐力等级": 4, "射速等级": 1, "伤害等级": 5},
-    "AKM（颗秒）": {"type": "突击步枪", "适合": "暴力压枪，低价高伤", "后坐力等级": 5, "射速等级": 2, "伤害等级": 4},
-    "ASH12": {"type": "射手步枪", "适合": "双发腰射，近远双修", "后坐力等级": 3, "射速等级": 2, "伤害等级": 4},
-    "MK4（全自动）": {"type": "冲锋枪", "适合": "全自动腰射，高机动", "后坐力等级": 2, "射速等级": 5, "伤害等级": 1},
-    "K437": {"type": "突击步枪", "适合": "双流骨架/CT顶配，S9新秀", "后坐力等级": 3, "射速等级": 3, "伤害等级": 3},
-    "M14": {"type": "射手步枪", "适合": "共振系列，稳定或高操控", "后坐力等级": 3, "射速等级": 2, "伤害等级": 4},
-    "M7":  {"type": "射手步枪", "适合": "双流/消音CT顶配", "后坐力等级": 3, "射速等级": 2, "伤害等级": 4},
-    "MP7（月影）": {"type": "冲锋枪", "适合": "极限腰射/射程双修", "后坐力等级": 2, "射速等级": 5, "伤害等级": 2},
-    "腾龙": {"type": "突击步枪", "适合": "UR/CT双水平满改", "后坐力等级": 3, "射速等级": 3, "伤害等级": 3},
+    "M4A1": {"type": "突击步枪", "适合": "均衡中距离", "后坐力": 3, "射速": 3, "伤害": 2, "风格标签": "均衡 远射 稳定"},
+    "MP5":  {"type": "冲锋枪",   "适合": "近战高速", "后坐力": 1, "射速": 5, "伤害": 1, "风格标签": "腰射 跑打 消音"},
+    "AK-47":{"type": "突击步枪", "适合": "高伤压枪", "后坐力": 5, "射速": 2, "伤害": 4, "风格标签": "压枪 远程点射"},
+    "AWM":  {"type": "狙击步枪", "适合": "一击致命", "后坐力": 5, "射速": 1, "伤害": 5, "风格标签": "瞬狙 超远 消音"},
+    "M700": {"type": "射手步枪", "适合": "灵活狙击", "后坐力": 4, "射速": 2, "伤害": 4, "风格标签": "连狙 性价比"},
+    "SR3M": {"type": "冲锋枪",   "适合": "撕咬双修", "后坐力": 2, "射速": 4, "伤害": 2, "风格标签": "腰射 双修 撕咬"},
+    "KC17": {"type": "射手步枪", "适合": "远距压制", "后坐力": 3, "射速": 2, "伤害": 4, "风格标签": "长管 短管 倍镜"},
+    "MK47（余烬）": {"type": "突击步枪", "适合": "均衡影袭", "后坐力": 3, "射速": 3, "伤害": 3, "风格标签": "均衡 消音 影袭 CT"},
+    "RM277": {"type": "狙击步枪", "适合": "重型高伤", "后坐力": 4, "射速": 1, "伤害": 5, "风格标签": "重型 倍镜 性价比"},
+    "AKM（颗秒）": {"type": "突击步枪", "适合": "暴力压枪", "后坐力": 5, "射速": 2, "伤害": 4, "风格标签": "压枪 低价 沙暴"},
+    "ASH12": {"type": "射手步枪", "适合": "双发双修", "后坐力": 3, "射速": 2, "伤害": 4, "风格标签": "腰射 双修 开镜"},
+    "MK4（全自动）": {"type": "冲锋枪", "适合": "全自动腰射", "后坐力": 2, "射速": 5, "伤害": 1, "风格标签": "腰射 高机动"},
+    "K437": {"type": "突击步枪", "适合": "双流顶配", "后坐力": 3, "射速": 3, "伤害": 3, "风格标签": "CT 骨架 顶配"},
+    "M14": {"type": "射手步枪", "适合": "共振系列", "后坐力": 3, "射速": 2, "伤害": 4, "风格标签": "共振 CT 影袭 弹鼓"},
+    "M7":  {"type": "射手步枪", "适合": "CT消音顶配", "后坐力": 3, "射速": 2, "伤害": 4, "风格标签": "CT 消音 共振 锚点"},
+    "MP7（月影）": {"type": "冲锋枪", "适合": "极限双修", "后坐力": 2, "射速": 5, "伤害": 2, "风格标签": "腰射 射程 短管"},
+    "腾龙": {"type": "突击步枪", "适合": "双水平满改", "后坐力": 3, "射速": 3, "伤害": 3, "风格标签": "UR CT 双水平"},
 }
 
-# ==================== 热门改枪码（聪聪全系列） ====================
 HOT_CODES = {
     "M4A1": [("激光远射流", "M4A1-X8K2PL9W", "中远距离，后坐力极低"),
              ("近战腰射王", "M4A1-C3M7QY1V", "室内腰射精度极高"),
@@ -99,195 +98,188 @@ HOT_CODES = {
                   ("腰射双修B", "6JU6V2G0EU90O684D8QL5", "腰射双修B")],
 }
 
-# ==================== UI 美化设置 ====================
-BG_COLOR = "#F0F3F7"
-ACCENT_COLOR = "#2C3E50"
-BTN_COLOR = "#2980B9"
-BTN_HOVER = "#3498DB"
+# ==================== 界面配色 ====================
+BG = "#F5F6FA"
+CARD_BG = "#FFFFFF"
+ACCENT = "#2C3E50"
+BTN_COLOR = "#3498DB"
+BTN_TEXT = "white"
+FONT = "微软雅黑"
 
-class WeaponAdvisorPro:
+class ModernWeaponAdvisor:
     def __init__(self, root):
         self.root = root
         self.root.title("三角洲行动 · 枪械私人顾问 Pro")
-        self.root.geometry("720x880")
+        self.root.geometry("800x900")
+        self.root.configure(bg=BG)
         self.root.resizable(False, False)
-        self.root.configure(bg=BG_COLOR)
 
-        # 主题与样式
+        # 样式
         style = ttk.Style()
         style.theme_use('clam')
-        style.configure("TLabel", background=BG_COLOR, font=("微软雅黑", 10))
-        style.configure("TLabelframe", background=BG_COLOR, font=("微软雅黑", 10, "bold"))
-        style.configure("TLabelframe.Label", background=BG_COLOR)
-        style.configure("TButton", font=("微软雅黑", 10), padding=6)
-        style.configure("TCombobox", font=("微软雅黑", 10))
-        style.configure("Accent.TButton", background=BTN_COLOR, foreground="white")
-        style.map("Accent.TButton", background=[("active", BTN_HOVER)])
+        style.configure("TLabel", background=BG, font=(FONT, 10))
+        style.configure("TLabelframe", background=BG, font=(FONT, 10, "bold"))
+        style.configure("TLabelframe.Label", background=BG)
+        style.configure("TButton", font=(FONT, 10), padding=6)
+        style.configure("Card.TFrame", background=CARD_BG, relief="solid", borderwidth=1)
+        style.configure("Accent.TButton", background=BTN_COLOR, foreground=BTN_TEXT)
+        style.map("Accent.TButton", background=[("active", "#2980B9")])
 
         # 变量
         self.dpi = tk.IntVar(value=800)
         self.reaction_time = tk.DoubleVar(value=250.0)
         self.dpi_measurements = []
-
         self.pref_type = tk.StringVar(value="自动选择")
         self.pref_range = tk.StringVar(value="中距离")
         self.pref_style = tk.StringVar(value="均衡")
-        # 新增变量
         self.pref_recoil = tk.StringVar(value="垂直优先")
         self.pref_suppressor = tk.BooleanVar(value=False)
-        self.pref_hipfire_grip = tk.BooleanVar(value=False)
+        self.pref_hipfire = tk.BooleanVar(value=False)
         self.pref_scope = tk.StringVar(value="红点/全息")
         self.pad_size = tk.StringVar(value="中号（30-40cm）")
         self.screen_res = tk.StringVar(value="1920x1080")
         self.in_game_sens = tk.DoubleVar(value=1.0)
 
+        # 查询筛选
+        self.filter_type = tk.StringVar(value="全部")
+        self.filter_style_keyword = tk.StringVar(value="")
         self.selected_weapon = tk.StringVar(value="M4A1")
-        self.create_widgets()
 
-    def create_widgets(self):
-        main_frame = ttk.Frame(self.root, padding=15)
-        main_frame.pack(fill="both", expand=True)
+        self.create_ui()
+
+    def create_ui(self):
+        # 主容器
+        main = ttk.Frame(self.root, padding=15)
+        main.pack(fill="both", expand=True)
 
         # 标题
-        title = ttk.Label(main_frame, text="三角洲行动 · 枪械私人顾问 Pro",
-                          font=("微软雅黑", 18, "bold"), foreground=ACCENT_COLOR, background=BG_COLOR)
+        title = tk.Label(main, text="三角洲行动 · 枪械私人顾问 Pro",
+                         font=(FONT, 18, "bold"), fg=ACCENT, bg=BG)
         title.pack(pady=(0,10))
 
-        notebook = ttk.Notebook(main_frame)
-        notebook.pack(fill="both", expand=True)
+        # 笔记本
+        nb = ttk.Notebook(main)
+        nb.pack(fill="both", expand=True)
 
-        # 选项卡
-        notebook.add(self.build_dpi_tab(), text="① DPI 测试 (精准)")
-        notebook.add(self.build_rt_tab(), text="② 反应速度")
-        notebook.add(self.build_pref_tab(), text="③ 高级战斗偏好")
-        notebook.add(self.build_result_tab(), text="④ 推荐方案 & 查询")
+        # 四个选项卡
+        nb.add(self.dpi_tab(), text="① DPI 测试")
+        nb.add(self.rt_tab(), text="② 反应速度")
+        nb.add(self.pref_tab(), text="③ 战斗偏好")
+        nb.add(self.result_tab(), text="④ 智能推荐 & 风格查询")
 
         # 底部按钮
-        btn_frame = ttk.Frame(main_frame)
-        btn_frame.pack(pady=15)
-        ttk.Button(btn_frame, text="🔍 综合分析并生成推荐", style="Accent.TButton",
+        btn_bar = ttk.Frame(main)
+        btn_bar.pack(pady=15)
+        ttk.Button(btn_bar, text="🔍 综合分析生成推荐", style="Accent.TButton",
                    command=self.full_analyze).pack(side="left", padx=10)
-        ttk.Button(btn_frame, text="📋 直接查询选中枪械", style="Accent.TButton",
-                   command=self.query_selected).pack(side="left", padx=10)
+        ttk.Button(btn_bar, text="📋 按风格筛选查询", style="Accent.TButton",
+                   command=self.filtered_query).pack(side="left", padx=10)
 
-    # ---------- DPI 测试（美化版） ----------
-    def build_dpi_tab(self):
-        tab = ttk.Frame()
-        tab.configure(padding=15)
+    def dpi_tab(self):
+        tab = ttk.Frame(padding=15)
+        card = ttk.Frame(tab, style="Card.TFrame", padding=20)
+        card.pack(fill="both", expand=True)
 
-        ttk.Label(tab, text="📏 精准 DPI 测量（A4纸辅助法）", font=("微软雅黑", 14, "bold")).pack()
-        ttk.Label(tab, text="拿一张A4纸（宽度21cm），鼠标从左移到右，重复3次取平均。",
-                  font=("微软雅黑", 9), foreground="gray").pack(pady=5)
+        ttk.Label(card, text="📏 精准 DPI 测量（A4纸辅助法）", font=(FONT, 13, "bold")).pack()
+        ttk.Label(card, text="将鼠标放在纸左边，按住左键水平移动到右边（21cm），重复3次。",
+                  foreground="gray", font=(FONT, 9)).pack(pady=5)
 
-        self.dpi_canvas = tk.Canvas(tab, height=50, bg="#D5D8DC", highlightthickness=0)
+        self.dpi_canvas = tk.Canvas(card, height=45, bg="#D5D8DC", highlightthickness=0)
         self.dpi_canvas.pack(fill="x", pady=10)
         self.dpi_canvas.bind("<Button-1>", self.start_dpi)
         self.dpi_canvas.bind("<B1-Motion>", self.update_dpi)
         self.dpi_canvas.bind("<ButtonRelease-1>", self.end_dpi)
 
-        self.dpi_status = ttk.Label(tab, text="按住左键从纸左边划到右边，松开后自动记录", foreground="gray")
+        self.dpi_status = ttk.Label(card, text="按住左键滑动，松开后记录", foreground="gray")
         self.dpi_status.pack()
-        self.dpi_progress = ttk.Label(tab, text="已完成 0/3 次", font=("微软雅黑", 10, "bold"))
+        self.dpi_progress = ttk.Label(card, text="已完成 0/3 次", font=(FONT, 10, "bold"))
         self.dpi_progress.pack(pady=5)
 
-        val_frame = ttk.Frame(tab)
-        val_frame.pack(fill="x", pady=5)
-        ttk.Label(val_frame, text="当前平均 DPI：", font=("微软雅黑", 11)).pack(side="left")
-        ttk.Label(val_frame, textvariable=self.dpi, foreground="#E74C3C", font=("微软雅黑", 14, "bold")).pack(side="left")
-        ttk.Button(val_frame, text="手动输入", command=self.manual_dpi).pack(side="right", padx=5)
-        ttk.Button(val_frame, text="重置测量", command=self.reset_dpi).pack(side="right")
+        val = ttk.Frame(card)
+        val.pack(fill="x", pady=10)
+        ttk.Label(val, text="当前平均 DPI：").pack(side="left")
+        ttk.Label(val, textvariable=self.dpi, foreground="#E74C3C", font=(FONT, 14, "bold")).pack(side="left")
+        ttk.Button(val, text="手动输入", command=self.manual_dpi).pack(side="right", padx=5)
+        ttk.Button(val, text="重置", command=self.reset_dpi).pack(side="right")
         return tab
 
-    # ---------- 反应测试 ----------
-    def build_rt_tab(self):
+    def rt_tab(self):
         tab = ttk.Frame(padding=15)
-        ttk.Label(tab, text="🧠 反应速度测试", font=("微软雅黑", 14, "bold")).pack(pady=10)
-        self.rt_btn = tk.Button(tab, text="开始反应测试（共5次）", bg="#7F8C8D", fg="white",
-                                font=("微软雅黑", 14, "bold"), relief="flat", padx=30, pady=10,
+        card = ttk.Frame(tab, style="Card.TFrame", padding=25)
+        card.pack(fill="both", expand=True)
+        ttk.Label(card, text="🧠 反应速度测试", font=(FONT, 13, "bold")).pack(pady=10)
+        self.rt_btn = tk.Button(card, text="开始反应测试（共5次）", bg="#7F8C8D", fg="white",
+                                font=(FONT, 14, "bold"), relief="flat", padx=30, pady=12,
                                 command=self.start_rt)
-        self.rt_btn.pack(pady=20)
-        ttk.Label(tab, text="平均反应时间(ms)：", font=("微软雅黑", 11)).pack(side="left")
-        ttk.Label(tab, textvariable=self.reaction_time, foreground="#E74C3C", font=("微软雅黑", 14, "bold")).pack(side="left")
+        self.rt_btn.pack(pady=25)
+        ttk.Label(card, text="平均反应时间(ms)：").pack(side="left")
+        ttk.Label(card, textvariable=self.reaction_time, foreground="#E74C3C", font=(FONT, 14, "bold")).pack(side="left")
         return tab
 
-    # ---------- 高级战斗偏好（大幅扩展） ----------
-    def build_pref_tab(self):
+    def pref_tab(self):
         tab = ttk.Frame(padding=15)
-        ttk.Label(tab, text="⚙️ 高级战斗偏好", font=("微软雅黑", 14, "bold")).pack(pady=(0,10))
+        # 用两个卡片上下排列
+        card1 = ttk.Frame(tab, style="Card.TFrame", padding=15)
+        card1.pack(fill="x", pady=5)
+        ttk.Label(card1, text="基本偏好", font=(FONT, 11, "bold")).grid(row=0, column=0, columnspan=2, sticky="w", pady=5)
+        ttk.Label(card1, text="武器类型：").grid(row=1, column=0, sticky="w", padx=5, pady=3)
+        ttk.Combobox(card1, textvariable=self.pref_type, values=["自动选择","突击步枪","冲锋枪","狙击步枪","射手步枪"],
+                     state="readonly", width=20).grid(row=1, column=1, padx=5)
+        ttk.Label(card1, text="交战距离：").grid(row=2, column=0, sticky="w", padx=5, pady=3)
+        ttk.Combobox(card1, textvariable=self.pref_range, values=["近距离","中距离","远距离","混合"],
+                     state="readonly", width=20).grid(row=2, column=1, padx=5)
+        ttk.Label(card1, text="射击风格：").grid(row=3, column=0, sticky="w", padx=5, pady=3)
+        ttk.Combobox(card1, textvariable=self.pref_style, values=["泼水/扫射","快速点射","单点精准","均衡"],
+                     state="readonly", width=20).grid(row=3, column=1, padx=5)
 
-        # 使用多个 LabelFrame 分组
-        group1 = ttk.LabelFrame(tab, text="基本武器偏好", padding=10)
-        group1.pack(fill="x", pady=5)
-        ttk.Label(group1, text="偏好武器类型：").grid(row=0, column=0, sticky="w", padx=5, pady=5)
-        ttk.Combobox(group1, textvariable=self.pref_type,
-                     values=["自动选择", "突击步枪", "冲锋枪", "狙击步枪", "射手步枪"],
-                     state="readonly", width=18).grid(row=0, column=1, padx=5)
+        card2 = ttk.Frame(tab, style="Card.TFrame", padding=15)
+        card2.pack(fill="x", pady=5)
+        ttk.Label(card2, text="操作与配件", font=(FONT, 11, "bold")).grid(row=0, column=0, columnspan=2, sticky="w", pady=5)
+        ttk.Label(card2, text="压枪习惯：").grid(row=1, column=0, sticky="w", padx=5, pady=3)
+        ttk.Combobox(card2, textvariable=self.pref_recoil, values=["垂直优先","水平优先","无脑压枪","微控点射"],
+                     state="readonly", width=20).grid(row=1, column=1, padx=5)
+        ttk.Label(card2, text="瞄具偏好：").grid(row=2, column=0, sticky="w", padx=5, pady=3)
+        ttk.Combobox(card2, textvariable=self.pref_scope, values=["红点/全息","2-4倍镜","高倍镜(6倍以上)","机瞄/无"],
+                     state="readonly", width=20).grid(row=2, column=1, padx=5)
+        ttk.Checkbutton(card2, text="偏爱消音器", variable=self.pref_suppressor).grid(row=3, column=0, sticky="w", padx=5, pady=3)
+        ttk.Checkbutton(card2, text="偏爱腰射握把", variable=self.pref_hipfire).grid(row=3, column=1, sticky="w", padx=5, pady=3)
 
-        ttk.Label(group1, text="主要交战距离：").grid(row=1, column=0, sticky="w", padx=5, pady=5)
-        ttk.Combobox(group1, textvariable=self.pref_range,
-                     values=["近距离", "中距离", "远距离", "混合"],
-                     state="readonly", width=18).grid(row=1, column=1, padx=5)
-
-        ttk.Label(group1, text="射击风格：").grid(row=2, column=0, sticky="w", padx=5, pady=5)
-        ttk.Combobox(group1, textvariable=self.pref_style,
-                     values=["泼水/扫射", "快速点射", "单点精准", "均衡"],
-                     state="readonly", width=18).grid(row=2, column=1, padx=5)
-
-        # 第二组：配件与操作
-        group2 = ttk.LabelFrame(tab, text="操作与配件倾向", padding=10)
-        group2.pack(fill="x", pady=5)
-        ttk.Label(group2, text="压枪习惯：").grid(row=0, column=0, sticky="w", padx=5, pady=5)
-        ttk.Combobox(group2, textvariable=self.pref_recoil,
-                     values=["垂直优先", "水平优先", "无脑压枪", "微控点射"],
-                     state="readonly", width=18).grid(row=0, column=1, padx=5)
-
-        ttk.Label(group2, text="瞄具偏好：").grid(row=1, column=0, sticky="w", padx=5, pady=5)
-        ttk.Combobox(group2, textvariable=self.pref_scope,
-                     values=["红点/全息", "2-4倍镜", "高倍镜(6倍以上)", "机瞄/无"],
-                     state="readonly", width=18).grid(row=1, column=1, padx=5)
-
-        ttk.Checkbutton(group2, text="偏爱消音器", variable=self.pref_suppressor).grid(row=2, column=0, sticky="w", padx=5, pady=5)
-        ttk.Checkbutton(group2, text="偏爱腰射握把", variable=self.pref_hipfire_grip).grid(row=2, column=1, sticky="w", padx=5, pady=5)
-
-        # 第三组：外设环境
-        group3 = ttk.LabelFrame(tab, text="外设与环境（辅助推荐）", padding=10)
-        group3.pack(fill="x", pady=5)
-        ttk.Label(group3, text="鼠标垫尺寸：").grid(row=0, column=0, sticky="w", padx=5, pady=5)
-        ttk.Combobox(group3, textvariable=self.pad_size,
-                     values=["小号(<30cm)", "中号（30-40cm）", "大号（40-50cm）", "桌垫级(>50cm)"],
-                     state="readonly", width=18).grid(row=0, column=1, padx=5)
-
-        ttk.Label(group3, text="屏幕分辨率：").grid(row=1, column=0, sticky="w", padx=5, pady=5)
-        ttk.Combobox(group3, textvariable=self.screen_res,
-                     values=["1920x1080", "2560x1440", "3840x2160", "1366x768"],
-                     state="readonly", width=18).grid(row=1, column=1, padx=5)
-
-        ttk.Label(group3, text="游戏内鼠标灵敏度：").grid(row=2, column=0, sticky="w", padx=5, pady=5)
-        sens_frame = ttk.Frame(group3)
-        sens_frame.grid(row=2, column=1, padx=5)
+        card3 = ttk.Frame(tab, style="Card.TFrame", padding=15)
+        card3.pack(fill="x", pady=5)
+        ttk.Label(card3, text="外设环境", font=(FONT, 11, "bold")).grid(row=0, column=0, columnspan=2, sticky="w", pady=5)
+        ttk.Label(card3, text="鼠标垫：").grid(row=1, column=0, sticky="w", padx=5, pady=3)
+        ttk.Combobox(card3, textvariable=self.pad_size, values=["小号(<30cm)","中号（30-40cm）","大号（40-50cm）","桌垫级(>50cm)"],
+                     state="readonly", width=20).grid(row=1, column=1, padx=5)
+        ttk.Label(card3, text="分辨率：").grid(row=2, column=0, sticky="w", padx=5, pady=3)
+        ttk.Combobox(card3, textvariable=self.screen_res, values=["1920x1080","2560x1440","3840x2160","1366x768"],
+                     state="readonly", width=20).grid(row=2, column=1, padx=5)
+        ttk.Label(card3, text="游戏灵敏度：").grid(row=3, column=0, sticky="w", padx=5, pady=3)
+        sens_frame = ttk.Frame(card3)
+        sens_frame.grid(row=3, column=1, padx=5)
         ttk.Entry(sens_frame, textvariable=self.in_game_sens, width=10).pack(side="left")
         ttk.Label(sens_frame, text="（例：1.0）").pack(side="left")
-
         return tab
 
-    # ---------- 结果与查询页 ----------
-    def build_result_tab(self):
+    def result_tab(self):
         tab = ttk.Frame(padding=15)
-        query_frame = ttk.LabelFrame(tab, text="📌 直接查询任意枪械的改枪码", padding=10)
-        query_frame.pack(fill="x", pady=5)
-        ttk.Label(query_frame, text="选择枪械：").pack(side="left")
-        weapon_list = list(HOT_CODES.keys())
-        self.weapon_combo = ttk.Combobox(query_frame, textvariable=self.selected_weapon,
-                                         values=weapon_list, state="readonly", width=22)
-        self.weapon_combo.pack(side="left", padx=10)
-        ttk.Button(query_frame, text="查询", style="Accent.TButton", command=self.query_selected).pack(side="left")
+        # 筛选卡片
+        filter_card = ttk.Frame(tab, style="Card.TFrame", padding=10)
+        filter_card.pack(fill="x", pady=5)
+        ttk.Label(filter_card, text="🔍 风格筛选查询", font=(FONT, 11, "bold")).grid(row=0, column=0, columnspan=4, sticky="w", pady=5)
+        ttk.Label(filter_card, text="类型：").grid(row=1, column=0, padx=5, pady=3)
+        ttk.Combobox(filter_card, textvariable=self.filter_type, values=["全部","突击步枪","冲锋枪","狙击步枪","射手步枪"],
+                     state="readonly", width=15).grid(row=1, column=1, padx=5)
+        ttk.Label(filter_card, text="风格关键词：").grid(row=1, column=2, padx=5, pady=3)
+        ttk.Entry(filter_card, textvariable=self.filter_style_keyword, width=18).grid(row=1, column=3, padx=5)
+        ttk.Button(filter_card, text="执行筛选", style="Accent.TButton", command=self.filtered_query).grid(row=1, column=4, padx=10)
 
-        self.result_text = tk.Text(tab, height=24, width=75, font=("微软雅黑", 10), wrap="word",
+        # 结果显示
+        self.result_text = tk.Text(tab, height=24, width=90, font=(FONT, 10), wrap="word",
                                    bg="white", relief="solid", bd=1)
-        self.result_text.pack(pady=10, fill="both", expand=True)
+        self.result_text.pack(fill="both", expand=True, pady=5)
         return tab
 
-    # ---------- DPI 测量逻辑（不变） ----------
+    # ==================== 功能逻辑 ====================
     def start_dpi(self, event):
         self.dpi_testing = True
         self.dpi_start_x = event.x
@@ -303,7 +295,7 @@ class WeaponAdvisorPro:
         self.dpi_testing = False
         self.dpi_canvas.config(bg="#D5D8DC")
         if self.dpi_pixel_moved < 50:
-            messagebox.showwarning("无效测量", "移动距离太短，请确保划过整张纸（21cm）")
+            messagebox.showwarning("无效", "移动距离太短，请划过整张纸（21cm）")
             return
         dpi_val = int(self.dpi_pixel_moved / 8.2677)
         dpi_val = max(100, min(12000, dpi_val))
@@ -323,7 +315,7 @@ class WeaponAdvisorPro:
     def manual_dpi(self):
         win = tk.Toplevel(self.root)
         win.title("手动输入 DPI")
-        win.configure(bg=BG_COLOR)
+        win.configure(bg=BG)
         ttk.Label(win, text="请输入鼠标 DPI（100-12000）").pack(padx=20, pady=10)
         entry = ttk.Entry(win)
         entry.pack(padx=20)
@@ -346,7 +338,6 @@ class WeaponAdvisorPro:
         self.dpi_progress.config(text="已重置，重新测3次")
         self.dpi_status.config(text="按住左键从纸左边划到右边")
 
-    # ---------- 反应测试（不变） ----------
     def start_rt(self):
         self.rt_btn.config(state="disabled", text="等待绿色...", bg="#7F8C8D")
         self.root.update()
@@ -371,26 +362,46 @@ class WeaponAdvisorPro:
             messagebox.showinfo("反应测试", f"5次平均：{avg:.1f} ms")
             self.rt_list = []
 
-    # ---------- 查询 ----------
-    def query_selected(self):
-        weapon = self.selected_weapon.get()
-        codes = HOT_CODES.get(weapon, [("无数据", "无", "")])
-        result = f"【{weapon}】所有改枪码：\n"
-        for name, code, desc in codes:
-            result += f"• {name}\n  码：{code}\n  说明：{desc}\n\n"
-        self.result_text.delete(1.0, tk.END)
-        self.result_text.insert(tk.END, result)
+    # ==================== 筛选查询 ====================
+    def filtered_query(self):
+        wtype = self.filter_type.get()
+        keyword = self.filter_style_keyword.get().strip().lower()
+        results = []
+        for name, codes in HOT_CODES.items():
+            info = WEAPON_DB.get(name, {})
+            if wtype != "全部" and info.get("type") != wtype:
+                continue
+            # 风格标签匹配
+            tags = info.get("风格标签", "").lower()
+            if keyword and keyword not in tags and keyword not in name.lower():
+                # 也检查改枪码名称
+                match_code = any(keyword in c[0].lower() for c in codes)
+                if not match_code:
+                    continue
+            results.append((name, info.get("适合", ""), codes))
 
-    # ---------- 高级推荐算法 ----------
+        if not results:
+            output = "没有找到匹配的枪械，请尝试更换关键词或类型。"
+        else:
+            output = ""
+            for name, suit, codes in results:
+                output += f"【{name}】（{suit}）\n"
+                for cname, code, desc in codes:
+                    output += f"  • {cname}\n    码：{code}\n    说明：{desc}\n"
+                output += "\n"
+        self.result_text.delete(1.0, tk.END)
+        self.result_text.insert(tk.END, output)
+
+    # ==================== 智能推荐 ====================
     def full_analyze(self):
-        dpi_val = self.dpi.get()
-        rt_val = self.reaction_time.get()
+        dpi = self.dpi.get()
+        rt = self.reaction_time.get()
         pref_type = self.pref_type.get()
         pref_range = self.pref_range.get()
         pref_style = self.pref_style.get()
         recoil = self.pref_recoil.get()
         supp = self.pref_suppressor.get()
-        hipfire = self.pref_hipfire_grip.get()
+        hipfire = self.pref_hipfire.get()
         scope = self.pref_scope.get()
         pad = self.pad_size.get()
         res = self.screen_res.get()
@@ -400,92 +411,93 @@ class WeaponAdvisorPro:
         candidates = list(WEAPON_DB.keys())
         if pref_type != "自动选择":
             type_map = {
-                "突击步枪": ["M4A1", "AK-47", "MK47（余烬）", "MK47（鏖战）", "K437", "腾龙", "AKM（颗秒）"],
-                "冲锋枪": ["MP5", "SR3M", "MK4（全自动）", "MP7（月影）"],
-                "狙击步枪": ["AWM", "RM277"],
-                "射手步枪": ["M700", "KC17", "ASH12", "M14", "M7"],
+                "突击步枪": ["M4A1","AK-47","MK47（余烬）","MK47（鏖战）","K437","腾龙","AKM（颗秒）"],
+                "冲锋枪": ["MP5","SR3M","MK4（全自动）","MP7（月影）"],
+                "狙击步枪": ["AWM","RM277"],
+                "射手步枪": ["M700","KC17","ASH12","M14","M7"],
             }
             candidates = [w for w in type_map.get(pref_type, []) if w in WEAPON_DB]
             if not candidates:
                 candidates = list(WEAPON_DB.keys())
 
-        best = None
-        best_score = -1
+        # 综合评分
+        scores = {}
         for w in candidates:
-            stats = WEAPON_DB[w]
-            score = 0
-            # DPI与反应
-            if dpi_val >= 800:
-                score += stats["射速等级"] * 3
+            s = 0
+            stat = WEAPON_DB[w]
+            # 基础匹配
+            if dpi >= 800:
+                s += stat["射速"] * 3
             else:
-                score += (6 - stats["后坐力等级"]) * 3
-            if rt_val <= 200:
-                if stats["type"] in ["冲锋枪", "突击步枪"]:
-                    score += 8
-            else:
-                if stats["type"] in ["狙击步枪", "射手步枪"]:
-                    score += 8
-            # 距离
-            if pref_range == "近距离" and stats["type"] == "冲锋枪":
-                score += 12
-            elif pref_range == "远距离" and stats["type"] in ["狙击步枪", "射手步枪"]:
-                score += 12
-            elif pref_range == "中距离" and stats["type"] == "突击步枪":
-                score += 10
-            if score > best_score:
-                best_score = score
-                best = w
-        if best is None:
-            best = "M4A1"
-
-        # 从该枪的码中选择最匹配
-        codes = HOT_CODES.get(best, [])
-        if not codes:
-            matched = ("无推荐码", "无", "请手动查询")
-        else:
-            # 多条件匹配打分
-            best_match = codes[0]
-            best_match_score = -1
-            for name, code, desc in codes:
-                s = 0
-                if hipfire and "腰射" in name:
-                    s += 10
-                if supp and "消音" in name:
-                    s += 10
-                if scope in ["高倍镜(6倍以上)"] and ("倍镜" in name or "高倍" in desc):
+                s += (6 - stat["后坐力"]) * 3
+            if rt <= 200:
+                if stat["type"] in ["冲锋枪","突击步枪"]:
                     s += 8
-                if "顶配" in name:
-                    s += 2
-                if pref_range == "近距离" and ("腰射" in name or "跑打" in name):
-                    s += 5
-                if pref_range == "远距离" and ("远射" in name or "倍镜" in name):
-                    s += 5
-                if s > best_match_score:
-                    best_match_score = s
-                    best_match = (name, code, desc)
-            matched = best_match
+            else:
+                if stat["type"] in ["狙击步枪","射手步枪"]:
+                    s += 8
+            if pref_range == "近距离" and stat["type"] == "冲锋枪":
+                s += 15
+            elif pref_range == "远距离" and stat["type"] in ["狙击步枪","射手步枪"]:
+                s += 15
+            elif pref_range == "中距离" and stat["type"] == "突击步枪":
+                s += 12
 
-        result = f"""【用户画像】
-DPI：{dpi_val}  |  反应时间：{rt_val} ms
-偏好武器：{pref_type}  |  距离：{pref_range}  |  风格：{pref_style}
-压枪习惯：{recoil}  |  瞄具：{scope}
+            # 风格与配件匹配
+            tags = stat["风格标签"].lower()
+            if hipfire and "腰射" in tags:
+                s += 10
+            if supp and "消音" in tags:
+                s += 8
+            if scope in ["高倍镜(6倍以上)"] and ("倍镜" in tags or "远射" in tags):
+                s += 8
+            if recoil in ["垂直优先","水平优先"] and ("稳定" in tags or "均衡" in tags):
+                s += 5
+            scores[w] = s
+
+        best = max(scores, key=scores.get) if scores else "M4A1"
+
+        # 从 best 的码中挑选最匹配
+        codes = HOT_CODES.get(best, [])
+        best_match = codes[0] if codes else ("默认", "N/A", "")
+        best_match_score = -1
+        for name, code, desc in codes:
+            ms = 0
+            if hipfire and "腰射" in name:
+                ms += 10
+            if supp and "消音" in name:
+                ms += 10
+            if "顶配" in name:
+                ms += 3
+            if pref_range == "近距离" and ("腰射" in name or "跑打" in name):
+                ms += 8
+            if pref_range == "远距离" and ("远射" in name or "倍镜" in name):
+                ms += 8
+            if ms > best_match_score:
+                best_match_score = ms
+                best_match = (name, code, desc)
+
+        output = f"""【用户画像】
+DPI：{dpi}  |  反应：{rt} ms
+类型偏好：{pref_type}  |  距离：{pref_range}  |  风格：{pref_style}
+压枪：{recoil}  |  瞄具：{scope}
 消音：{'是' if supp else '否'}  |  腰射握把：{'是' if hipfire else '否'}
-鼠标垫：{pad}  |  分辨率：{res}  |  游戏灵敏度：{sens}
+鼠标垫：{pad}  |  分辨率：{res}  |  灵敏度：{sens}
 
-【智能推荐枪械】
+【智能推荐】
 枪械：{best} ({WEAPON_DB[best]['type']})
 特点：{WEAPON_DB[best]['适合']}
 
 【最佳匹配改枪码】
-改装名称：{matched[0]}
-改枪码：{matched[1]}
-适用说明：{matched[2]}
+改装名称：{best_match[0]}
+改枪码：{best_match[1]}
+适用说明：{best_match[2]}
 （来自聪聪实测方案）
 """
         self.result_text.delete(1.0, tk.END)
-        self.result_text.insert(tk.END, result)
+        self.result_text.insert(tk.END, output)
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = WeaponAdvisorPro(root)
+    app = ModernWeaponAdvisor(root)
     root.mainloop()
