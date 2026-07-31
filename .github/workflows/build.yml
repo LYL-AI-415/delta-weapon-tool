@@ -8,10 +8,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4          # 从 v3 改为 v4
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v5      # 从 v4 改为 v5
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -22,7 +22,7 @@ jobs:
         run: pyinstaller --onefile --windowed delta_weapon_tool.py
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4   # ⚠️ 关键修改：v3 → v4
+        uses: actions/upload-artifact@v4
         with:
-          name: delta-weapon-tool
+          name: delta-weapon-tool-pro
           path: dist/delta_weapon_tool.exe
